@@ -21,7 +21,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "What's new in Julia 0.6",
     "category": "section",
-    "text": "The Release notes contains a list of new features, changes and deprecations. For a closer look at some of the new features, please have a look at these blog posts:More Dots: Syntactic Loop Fusion in Julia\nKnowing where you are: custom array indices in Julia\nUpgrades to the REPL in Julia 0.6"
+    "text": "The release notes contain a list of new features, changes and deprecations. A closer look at some of the larger, new, functionalities can be found in the following blog posts:More Dots: Syntactic Loop Fusion in Julia\nKnowing where you are: custom array indices in Julia\nUpgrades to the REPL in Julia 0.6"
 },
 
 {
@@ -110,6 +110,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Deprecated or removed",
     "category": "section",
     "text": "Linear indexing is now only supported when there is exactly one non-cartesian index provided. Allowing a trailing index at dimension d to linearly access the higher dimensions from array A (beyond size(A, d)) has been deprecated as a stricter constraint during bounds checking. Instead, reshape the array such that its dimensionality matches the number of indices (#20079).\nisdefined(a::Array, i::Int) has been deprecated in favor of isassigned (#18346).\nis has been deprecated in favor of === (which used to be an alias for is) (#17758).\nnum and den have been deprecated in favor of numerator and denominator respectively (#19233).\ninfix operator $ has been deprecated in favor of infix ⊻ or function xor() (#18977).\nDates.recur has been deprecated in favor of filter (#19288)\ncummin and cummax have been deprecated in favor of accumulate.\nsumabs and sumabs2 have been deprecated in favor of sum(abs, x) and sum(abs2, x), respectively. maxabs and minabs have similarly been deprecated in favor of maximum(abs, x) and minimum(abs, x). Likewise for the in-place counterparts of these functions (#19598).\nproduce, consume and iteration over a Task object have been deprecated in favor of using Channels for inter-task communication  (#19841).\n@test_approx_eq x y has been deprecated in favor of @test isapprox(x,y) or @test x ≈ y (#4615).\nVectorized functions have been deprecated in favor of dot syntax (#17302, #17265, #18558, #19711, #19712, #19791, #19802, #19931, #20543, #20228).\nThe two-argument forms of map (map!(f, A)) and asyncmap! (asyncmap!(f, A)) have been deprecated in anticipation of future semantic changes (#19721).\nisimag has been deprecated (#19949).\nbroadcast_zpreserving has been deprecated (#19533, #19720).\nconvert methods from Diagonal and Bidiagonal to subtypes of AbstractTriangular have been deprecated (#17723).\nThe zero-argument constructor MersenneTwister() has been deprecated in favor of the explicit MersenneTwister(0) (#16984)."
+},
+
+{
+    "location": "NEWS.html#First-time-committers-1",
+    "page": "Release Notes",
+    "title": "First time committers",
+    "category": "section",
+    "text": "Welcome to the following first time committers: 2Cubed\nakshay sharma\nAlex Hallam\nAlexander Morley\nAndrew Keller\nAndy Ferris\nAsmodeus\nAugustin Yiptong\nBenjamin Deonovic\nBenoît Legat\nbramtayl\nBrett Cannon\nCameron Prybol\nCarlo Lucibello\nChristian Kurz\ncolinfang\ncrobarcro\nDaniel Matz\nfelix\nGeorge Joseph\ngpeairs\nGregPlowman\nHarsha Byadarahalli Mahesh\niamnapo\nJKrehl\nJohan\nJonas Klasen\nJoseph Kleinhenz\njustapoise\nKen-B\nKiaran B Dave\nKumar Krishna Agrawal\nKv Manohar\nKwadwo 'Que' Amankwa\nlizz\nLokesh Sharma\nLyndon Ollar\nm-j-w\nMatthew Bedford\nMichael Fiano\nNapoleon Oikonomou\nNathan Baum\nNathan Smith\nprasad-marne\nRaj Krishnan\nRandy Lai\nRishikesh\nRoman Poya\nRory Finnegan\nRory-Finnegan\nRuohui Wang\nSascha Mann\nSiddharth Gupta\nSimon\nstrickek\ntraktofon\nVicthor Simões Sartório\nViktor Qvarfordt\nWonseok Shin\nZacNugent"
 },
 
 {
@@ -8461,7 +8469,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Mathematics",
     "title": "Base.conj",
     "category": "Function",
-    "text": "conj(z)\n\nCompute the complex conjugate of a complex number z.\n\njulia> conj(1 + 3im)\n1 - 3im\n\n\n\nconj(v::RowVector)\n\nReturns a ConjArray lazy view of the input, where each element is conjugated.\n\nExample\n\njulia> v = [1+im, 1-im].'\n1×2 RowVector{Complex{Int64},Array{Complex{Int64},1}}:\n 1+1im  1-1im\n\njulia> conj(v)\n1×2 RowVector{Complex{Int64},ConjArray{Complex{Int64},1,Array{Complex{Int64},1}}}:\n 1-1im  1+1im\n\n\n\n"
+    "text": "conj(v::RowVector)\n\nReturns a ConjArray lazy view of the input, where each element is conjugated.\n\nExample\n\njulia> v = [1+im, 1-im].'\n1×2 RowVector{Complex{Int64},Array{Complex{Int64},1}}:\n 1+1im  1-1im\n\njulia> conj(v)\n1×2 RowVector{Complex{Int64},ConjArray{Complex{Int64},1,Array{Complex{Int64},1}}}:\n 1-1im  1+1im\n\n\n\nconj(z)\n\nCompute the complex conjugate of a complex number z.\n\njulia> conj(1 + 3im)\n1 - 3im\n\n\n\n"
 },
 
 {
